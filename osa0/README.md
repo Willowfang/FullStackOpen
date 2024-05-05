@@ -87,5 +87,5 @@ sequenceDiagram
     server->>browser: JSON file
     deactivate server
 
-    Note over browser,server: xhttp.onreadystatechanged callback fires, the JSON file is parsed and a new list item is added to notes for<br/>each item, containing the item content as text. The previous list is replaced by the new list.
+    Note over browser,server: xhttp.onreadystatechanged callback fires, the JSON file is parsed and a new<br/>list item is added to notes for each item, containing the <br/>item content as text. The previous list is replaced <br/>by the new list.
 ```
