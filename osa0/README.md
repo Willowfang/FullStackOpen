@@ -89,3 +89,18 @@ sequenceDiagram
 
     Note over browser,server: xhttp.onreadystatechanged callback fires, the JSON file is parsed and a new<br/>list item is added to notes for each item, containing the <br/>item content as text. The previous list is replaced <br/>by the new list.
 ```
+# 0.6 Uusi muistiinpano
+
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note over browser,server: The server adds the POST request content as a new note,<br/>along with a timestamp. The request is sent as JSON.
+    Note over browser,server: The browser adds the note to an internal list of notes<br/> and rerenders the list on the document.
+
+    activate server
+    server-->>browser: { "message": "note created" }
+    deactivate server
+```
