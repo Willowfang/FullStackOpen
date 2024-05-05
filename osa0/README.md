@@ -6,7 +6,7 @@ sequenceDiagram
     participant server
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
-    Note over browser,server: The server adds the POST request content as a new note, along with a timestamp
+    Note over browser,server: The server adds the POST request content as a new note,<br/>along with a timestamp
 
     activate server
     server-->>browser: Redirect /exampleapp/notes
@@ -77,7 +77,7 @@ sequenceDiagram
     server->>browser: JavaScript file
     deactivate server
 
-    Note over browser,server: The browser executes the JavaScript file. The window is given an onload callback function, that<br/>in turn, attaches a callback function to the form.onsubmit property. The xhttp.onreadystatechanged<br/>is given a callback function for rendering notes on response before a new request is made.
+    Note over browser,server: The browser executes the JavaScript file. The window is given an onload<br/>callback function, that in turn, attaches a callback function to the form.onsubmit property.<br/>The xhttp.onreadystatechanged is given a callback function for rendering<br/> notes on response before a new request is made.
 
     activate browser
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
