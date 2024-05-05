@@ -77,7 +77,7 @@ sequenceDiagram
     server->>browser: JavaScript file
     deactivate server
 
-    Note over browser,server: The browser executes the JavaScript file. A callback function is provided for xhttp.onreadystatechanged property before a request is made.
+    Note over browser,server: The browser executes the JavaScript file. The window is given an onload callback function, that<br/>in turn, attaches a callback function to the form.onsubmit property. The xhttp.onreadystatechanged<br/>is given a callback function for rendering notes on response before a new request is made.
 
     activate browser
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
@@ -87,5 +87,5 @@ sequenceDiagram
     server->>browser: JSON file
     deactivate server
 
-    Note right of browser: xhttp.onreadystatechanged callback fires, the JSON file is parsed and a new list item is added to notes for each item, containing the item content as text.
+    Note over browser,server: xhttp.onreadystatechanged callback fires, the JSON file is parsed and a new list item is added to notes for<br/>each item, containing the item content as text. The previous list is replaced by the new list.
 ```
